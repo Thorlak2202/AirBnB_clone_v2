@@ -22,14 +22,10 @@ def Hello_holby():
     return 'HBNB'
 
 
-@app.route('/c/is_fun', strict_slashes=False)
-def C_is():
-    return 'C is fun'
+@app.route('/c/<text>', strict_slashes=False)
+def C_is(text):
+    return 'C {}'.format(text.replace("_", " "))
 
-
-@app.route('/c/cool', strict_slashes=False)
-def C_cool():
-    return 'C cool'
 
 if __name__ == "__main__":
     app.run(debug=True)
