@@ -16,11 +16,13 @@ from models.state import State
 
 app = Flask(__name__)
 
+
 @app.teardown_appcontext
 def tear_down(self):
     """After each request removes the current SQLAlchemy Session.
     """
     storage.close()
+
 
 @app.route('/states_list', strict_slashes=False)
 def list_states():
