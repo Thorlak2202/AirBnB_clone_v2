@@ -72,3 +72,8 @@ class DBStorage:
                 key = "{}.{}".format(cls.__name__, _row.id)
                 structure[key] = _row
             return structure
+
+    def close(self):
+        """close
+        """
+        self.__session.close()
