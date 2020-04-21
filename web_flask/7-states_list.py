@@ -25,10 +25,7 @@ def tear_down(self):
 @app.route('/states_list', strict_slashes=False)
 def list_states():
     states_dict = storage.all(State)
-    states_listed = []
-    for k, v in states_dict.items():
-        states_listed.append(v)
-    return render_template('7-states_list', states_listed=states_listed)
+    return render_template('7-states_list.html', s=states_dict)
 
 
 if __name__ == "__main__":
